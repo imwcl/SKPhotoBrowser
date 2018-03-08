@@ -381,7 +381,7 @@ internal extension SKPhotoBrowser {
     func frameForToolbarAtOrientation() -> CGRect {
         let offset: CGFloat = {
             if #available(iOS 11.0, *) {
-                return view.safeAreaInsets.bottom
+                return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
             } else {
                 return 15
             }
